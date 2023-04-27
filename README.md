@@ -1,33 +1,46 @@
 # LOTR SDK Playground
 
-Welcome to the LOTR SDK Playground! This app built with Next.js allows users to explore the world of The Lord of the Rings, including the books, movies, characters and quotes. All of the content is accessible on a single page via tabs.
+This repository contains the source code for a web application that allows users to explore the world of The Lord of the Rings, including the books, movies, characters, and quotes, all accessible on a single page via tabs. It uses [Next.js](https://nextjs.org/) as the web framework and [Semantic UI for React](https://react.semantic-ui.com/) as the design system.
 
-## Getting Started
+## Installation
 
-To get started with this app, you will need to have Node.js installed on your machine. If you don't have it yet, you can download it [here](https://nodejs.org/en/).
+To run the application on your local machine, please ensure that you have [Node.js](https://nodejs.org/) installed. Then, follow the steps below:
 
-### Installation
+1. Clone the repository to your local machine.
 
-Once you have Node.js installed, you can clone this repo to your local machine and navigate to the project directory in your terminal. Then, run the following command to install the necessary dependencies:
+2. Open the terminal and navigate to the root directory of the project.
 
-```
-npm install
-```
+3. Run the following command to install the necessary dependencies:
 
-### Running the App
+   ```terminal
+   npm install
+   ```
 
-After the dependencies have been installed, you can run the following command to start the development server:
+4. Run the following command to start the development server:
 
-```
-npm run dev
-```
+   ```terminal
+   npm run dev
+   ```
 
-This will start the app and it will be available at `http://localhost:3000`. You can view it in your browser of choice.
+5. Open your web browser and navigate to `http://localhost:3000` to see the application running.
 
-## Design System
+## Usage
 
-This app uses the [Semantic UI for React](https://react.semantic-ui.com/) design system. It is a great way to quickly build high-quality user interfaces.
+The application provides a simple user interface for exploring the world of The Lord of the Rings. It uses the [baddley-lotr-sdk](https://www.npmjs.com/package/baddley-lotr-sdk) npm package to get all the data for display.
 
-## Data Source
+The application consists of the following tabs:
 
-This app uses the [baddley-lotr-sdk](https://www.npmjs.com/package/baddley-lotr-sdk) package from npm to get all of the data for display. This package provides a convenient way to access data related to The Lord of the Rings universe.
+- Books
+- Movies
+- Characters
+- Quotes
+
+Clicking on a tab will display the corresponding content.
+
+## Deployment
+
+A deployed version of this application is available at [https://lotr-sdk-playground.vercel.app/](https://lotr-sdk-playground.vercel.app/). It is hosted at [Vercel](https://vercel.com/).
+
+## License
+
+This project is licensed under the [MIT license](LICENSE).
