@@ -50,6 +50,12 @@ export default function Home() {
       <Container className="main">
         <h5>Jason Baddley Presents</h5>
         <h1>The Lord of the Rings SDK Playground</h1>
+        <Container>
+          Go to the documentation:{" "}
+          <a target="blank" href="https://www.npmjs.com/package/baddley-lotr-sdk">
+            NPM Package
+          </a>
+        </Container>
         <Divider />
         <Tab panes={panes} />
       </Container>
