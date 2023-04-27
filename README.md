@@ -1,38 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# LOTR SDK Playground
+
+Welcome to the LOTR SDK Playground! This app built with Next.js allows users to explore the world of The Lord of the Rings, including the books, movies, characters and quotes. All of the content is accessible on a single page via tabs.
 
 ## Getting Started
 
-First, run the development server:
+To get started with this app, you will need to have Node.js installed on your machine. If you don't have it yet, you can download it [here](https://nodejs.org/en/).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+### Installation
+
+Once you have Node.js installed, you can clone this repo to your local machine and navigate to the project directory in your terminal. Then, run the following command to install the necessary dependencies:
+
+```
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Running the App
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+After the dependencies have been installed, you can run the following command to start the development server:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```
+npm run dev
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+This will start the app and it will be available at `http://localhost:3000`. You can view it in your browser of choice.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Design System
 
-## Learn More
+This app uses the [Semantic UI for React](https://react.semantic-ui.com/) design system. It is a great way to quickly build high-quality user interfaces.
 
-To learn more about Next.js, take a look at the following resources:
+## Data Source
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This app uses the [baddley-lotr-sdk](https://www.npmjs.com/package/baddley-lotr-sdk) package from npm to get all of the data for display. This package provides a convenient way to access data related to The Lord of the Rings universe.
