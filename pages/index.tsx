@@ -6,6 +6,7 @@ import Characters from "../components/characters";
 import Movies from "../components/movies";
 import { useSDKContext } from "../contexts/sdk";
 import { useEffect, useMemo, useState } from "react";
+import { isEqual } from "lodash";
 
 export default function Home() {
   const sdk = useSDKContext();
