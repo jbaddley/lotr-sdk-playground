@@ -96,7 +96,7 @@ export default function Characters({ authorized }: { authorized: boolean }) {
                     ellipsisItem={null}
                     firstItem={null}
                     lastItem={null}
-                    siblingRange={1}
+                    siblingRange={3}
                     totalPages={pages}
                     onPageChange={(p, data) => setPageNum(+data.activePage)}
                   />
