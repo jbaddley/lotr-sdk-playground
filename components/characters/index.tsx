@@ -8,6 +8,7 @@ import {
   List,
   Loader,
   Message,
+  Pagination,
   Search,
   Segment,
   Tab,
@@ -22,15 +23,23 @@ export default function Characters({ authorized }: { authorized: boolean }) {
   const sdk = useSDKContext();
   const [characterId, setCharacterId] = useState<string>();
   const [search, setSearch] = useState<string>();
+  const [pageNum, setPageNum] = useState<number>(1);
 
   const {
-    data: characters,
+    data: { docs: characters, pages } = {},
     error: charactersError,
     refetch: refetchCharactersError,
     isLoading: isLoadingCharacters,
-  } = useQuery(["characters", search, authorized], () => {
+  } = useQuery(["characters", search, pageNum, authorized], async () => {
     if (authorized) {
-      return sdk.getCharacters(search);
+      if (search) {
+        const docs = await sdk.getCharacters(search);
+        return {
+          docs,
+          pages: 0,
+        };
+      }
+      return sdk.getCharactersByPage(pageNum);
     }
   });
 
@@ -78,19 +87,36 @@ export default function Characters({ authorized }: { authorized: boolean }) {
             <h2>Characters</h2>
             <Search placeholder="search" value={search} onSearchChange={(e, data) => setSearch(data.value)} />
             {authorized ? (
-              <List>
-                {characters?.map((character) => (
-                  <List.Item key={character._id}>
-                    <Button
-                      onClick={selectCharacter(character._id)}
-                      primary={character._id === characterId}
-                      className={classnames("list-item-button", { selected: character._id === characterId })}
-                    >
-                      {character.name}
-                    </Button>
-                  </List.Item>
-                ))}
-              </List>
+              <Container style={{ marginTop: 24 }}>
+                {pages > 0 && (
+                  <Pagination
+                    boundaryRange={0}
+                    activePage={pageNum}
+                    defaultActivePage={1}
+                    ellipsisItem={null}
+                    firstItem={null}
+                    lastItem={null}
+                    siblingRange={1}
+                    totalPages={pages}
+                    onPageChange={(p, data) => setPageNum(+data.activePage)}
+                  />
+                )}
+                <List>
+                  {characters?.map((character) => (
+                    <List.Item key={character._id}>
+                      <Button
+                        onClick={selectCharacter(character._id)}
+                        primary={character._id === characterId}
+                        className={classnames("list-item-button", {
+                          selected: character._id === characterId,
+                        })}
+                      >
+                        {character.name}
+                      </Button>
+                    </List.Item>
+                  ))}
+                </List>
+              </Container>
             ) : (
               <h3>Requires an api token.</h3>
             )}
